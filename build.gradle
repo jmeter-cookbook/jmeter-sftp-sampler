@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+version = '0.1'
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    testCompile 'junit:junit:4.11'
+
+    //jmeter stuff
+    compile('org.apache.jmeter:ApacheJMeter_core:2.11') {
+        exclude module: 'rsyntaxtextarea' //version 2.5.1 not on repo
+    }
+
+    compile 'com.fifesoft:rsyntaxtextarea:2.5.0'
+    compile 'com.jcraft:jsch:0.1.51'
+}
